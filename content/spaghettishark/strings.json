@@ -1,0 +1,68 @@
+{
+  "buyEnabled": true,
+  "metaTitle": "Spaghetti Shark — Carb Up. Bite Harder.",
+  "metaDescription": "The carb-loaded apex predator of crypto. No images, just type and teeth. 0% tax, sauce-first culture.",
+  "menu": {
+    "home": "Home",
+    "lore": "Lore",
+    "token": "Token",
+    "roadmap": "Roadmap",
+    "press": "Press Kit",
+    "buy": "Buy",
+    "x": "X",
+    "tg": "TG"
+  },
+  "hero": {
+    "eyebrow": "THE CARB-LOADED APEX PREDATOR",
+    "h1Variants": [
+      ["PASTA POWER.", "SHARK BITE."],
+      ["EAT THE DIP.", "TWIRL THE TREND."],
+      ["ONLY AL DENTE.", "ONLY UP? LOL."]
+    ],
+    "sub": "No images. No fluff. Just noodles and nerve.",
+    "buyCta": "Buy on Pump.fun",
+    "secondaryCtas": ["Join the School", "Follow the Shark"]
+  },
+  "strip": [
+    "Zero promises. 100% pasta.",
+    "We don't roadmap — we menu.",
+    "The only dip worth eating.",
+    "Fork the FUD.",
+    "Carbs. Candles. Capisce?"
+  ],
+  "narrativeBurst": {
+    "title": "Origin of the Sauce",
+    "body": "A chef dropped an AI pasta reactor into the ocean. Lightning struck. Wheat DNA high-fived a baby shark. Now he eats FUD, slurps liquidity, and burps bullish."
+  },
+  "bullishMenu": {
+    "title": "THE MENU",
+    "items": [
+      "Fair Launch • Pump.fun curve kitchen",
+      "0% Tax • The sauce is free",
+      "≤5% Treasury • Only if we need ads & noodles",
+      "LP & fees per Pump.fun docs (currently 0.015 SOL on graduation)"
+    ],
+    "disclaimer": "High risk. Pasta not profits. Read live docs before you slurp."
+  },
+  "community": {
+    "title": "Community Table",
+    "body": "Post your carb-core memes with #SpaghettiShark. No stock pics — only logo, letters, and irresponsible confidence."
+  },
+  "roadmapPreview": {
+    "title": "BULLISH MENU SPECIALS",
+    "bullets": [
+      "Week 1: Sauce Storm — meme blitz + sticker drops",
+      "Week 2: Shark Signal — on-chain pings with bite SFX",
+      "Week 3: Collab Feast — cook-alongs & chart slurps",
+      "Ongoing: Bite Events — sudden pasta raids"
+    ]
+  },
+  "footer": {
+    "legal": "For entertainment. Not investment advice. Some regions may be restricted.",
+    "region": "Heads-up: access to third-party platforms may vary by country."
+  },
+  "toggleTips": {
+    "reduceMotionOn": "Motion trimmed. Pasta rests.",
+    "reduceMotionOff": "Motion restored. Stirring sauce."
+  }
+}

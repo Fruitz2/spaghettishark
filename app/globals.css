@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 202 62% 11%;
+    --foreground: 40 47% 92%;
+    --card: 205 56% 13%;
+    --card-foreground: 40 47% 92%;
+    --popover: 205 56% 13%;
+    --popover-foreground: 40 47% 92%;
+    --primary: 5 76% 53%;
+    --primary-foreground: 40 47% 92%;
+    --secondary: 152 48% 41%;
+    --secondary-foreground: 40 47% 92%;
+    --muted: 205 56% 13%;
+    --muted-foreground: 40 47% 72%;
+    --accent: 5 76% 53%;
+    --accent-foreground: 40 47% 92%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 40 47% 92%;
+    --border: 40 47% 20%;
+    --input: 40 47% 20%;
+    --ring: 5 76% 53%;
+    --radius: 1.5rem;
+    
+    /* Premium gradient stops */
+    --gradient-from: #E0342C;
+    --gradient-via: #2FA66A;
+    --gradient-to: #F4E7D2;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background font-body text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Smooth scrolling for browsers that support it */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Premium background effects */
+@layer utilities {
+  .bg-wordmark {
+    position: relative;
+    background: linear-gradient(135deg, #0A2334 0%, #0D2A3D 50%, #0F3146 100%);
+  }
+  
+  /* Animated gradient overlay */
+  .bg-wordmark::after {
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(224, 52, 44, 0.05) 0%,
+      transparent 50%
+    );
+    animation: rotate-gradient 20s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .bg-wordmark::before {
+    content: "SPAGHETTI SHARK";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(8rem, 20vw, 24rem);
+    font-weight: 900;
+    font-family: var(--font-display);
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(244, 231, 210, 0.05);
+    text-stroke: 1px rgba(244, 231, 210, 0.05);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 1;
+    animation: pulse-glow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes rotate-gradient {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { 
+      opacity: 0.05;
+      filter: drop-shadow(0 0 20px rgba(224, 52, 44, 0.1));
+    }
+    50% { 
+      opacity: 0.12;
+      filter: drop-shadow(0 0 40px rgba(224, 52, 44, 0.2));
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .bg-wordmark::before,
+    .bg-wordmark::after {
+      animation: none;
+      opacity: 0.05;
+    }
+  }
+}
+
+/* Custom scrollbar */
+@layer utilities {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(224, 52, 44, 0.3);
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(224, 52, 44, 0.5);
+  }
+}
+
+/* Focus visible styles for accessibility */
+@layer base {
+  *:focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
+  }
+}
+
+/* Prose styles for markdown content */
+@layer components {
+  .prose {
+    @apply max-w-none font-body text-foreground/90;
+  }
+  
+  .prose h1 {
+    @apply mb-6 font-display text-4xl font-bold tracking-tight md:text-5xl;
+  }
+  
+  .prose h2 {
+    @apply mb-4 mt-12 font-display text-3xl font-bold tracking-tight md:text-4xl;
+  }
+  
+  .prose h3 {
+    @apply mb-3 mt-8 font-display text-2xl font-semibold tracking-tight md:text-3xl;
+  }
+  
+  .prose p {
+    @apply mb-4 leading-relaxed;
+  }
+  
+  .prose ul,
+  .prose ol {
+    @apply mb-4 ml-6 space-y-2;
+  }
+  
+  .prose ul {
+    @apply list-disc;
+  }
+  
+  .prose ol {
+    @apply list-decimal;
+  }
+  
+  .prose li {
+    @apply leading-relaxed;
+  }
+  
+  .prose strong {
+    @apply font-bold text-accent;
+  }
+  
+  .prose blockquote {
+    @apply border-l-4 border-accent/50 pl-4 italic text-foreground/80;
+  }
+  
+  .prose code {
+    @apply rounded bg-muted px-1.5 py-0.5 font-mono text-sm text-accent2;
+  }
+  
+  .prose a {
+    @apply text-accent underline-offset-4 transition-colors hover:text-accent/80 hover:underline;
+  }
+}
