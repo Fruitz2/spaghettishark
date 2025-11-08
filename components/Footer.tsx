@@ -4,17 +4,8 @@ import Link from "next/link";
 import { Separator } from "./ui/separator";
 
 interface FooterProps {
-  strings: {
-    footer: {
-      company: string;
-      legal: string;
-      disclaimer: string;
-    };
-  };
-  links: {
-    x: string;
-    tg: string;
-  };
+  strings: any;
+  links: any;
 }
 
 export function Footer({ strings, links }: FooterProps) {
