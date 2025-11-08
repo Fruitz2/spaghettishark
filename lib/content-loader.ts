@@ -57,14 +57,15 @@ export interface Links {
   contract: string;
 }
 
+import stringsData from '@/content/spaghettishark/strings.json';
+import linksData from '@/content/spaghettishark/links.json';
+
 export function getStrings(): Strings {
-  // Import JSON directly for client-side compatibility
-  return require('@/content/spaghettishark/strings.json');
+  return stringsData as Strings;
 }
 
 export function getLinks(): Links {
-  // Import JSON directly for client-side compatibility
-  return require('@/content/spaghettishark/links.json');
+  return linksData as Links;
 }
 
 // Markdown content loading moved to individual page components
