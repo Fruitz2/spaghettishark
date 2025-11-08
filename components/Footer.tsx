@@ -5,8 +5,8 @@ import { Separator } from "./ui/separator";
 import type { Strings, Links } from "@/lib/content-loader";
 
 interface FooterProps {
-  strings: Strings;
-  links: Links;
+  strings: any;
+  links: any;
 }
 
 export function Footer({ strings, links }: FooterProps) {
