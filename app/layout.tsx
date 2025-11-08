@@ -16,11 +16,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: strings.metaTitle,
-  description: strings.metaDescription,
+  title: "Spaghetti Shark - The Pasta-Powered Memecoin",
+  description: "One shark. Infinite pasta. Zero survivors. Join the most carb-loaded memecoin in crypto.",
   openGraph: {
-    title: strings.metaTitle,
-    description: strings.metaDescription,
+    title: "Spaghetti Shark - The Pasta-Powered Memecoin",
+    description: "One shark. Infinite pasta. Zero survivors. Join the most carb-loaded memecoin in crypto.",
     url: "https://spaghettishark.xyz",
     siteName: "Spaghetti Shark",
     locale: "en_US",
@@ -30,14 +30,14 @@ export const metadata: Metadata = {
         url: "/api/og",
         width: 1200,
         height: 630,
-        alt: strings.metaTitle,
+        alt: "Spaghetti Shark",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: strings.metaTitle,
-    description: strings.metaDescription,
+    title: "Spaghetti Shark - The Pasta-Powered Memecoin",
+    description: "One shark. Infinite pasta. Zero survivors. Join the most carb-loaded memecoin in crypto.",
     images: ["/api/og"],
   },
   robots: {
