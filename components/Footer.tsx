@@ -2,11 +2,19 @@
 
 import Link from "next/link";
 import { Separator } from "./ui/separator";
-import type { Strings, Links } from "@/lib/content-loader";
 
 interface FooterProps {
-  strings: any;
-  links: any;
+  strings: {
+    footer: {
+      company: string;
+      legal: string;
+      disclaimer: string;
+    };
+  };
+  links: {
+    x: string;
+    tg: string;
+  };
 }
 
 export function Footer({ strings, links }: FooterProps) {

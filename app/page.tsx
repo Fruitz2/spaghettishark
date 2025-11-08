@@ -34,10 +34,6 @@ export default function HomePage() {
         return;
       }
     }
-
-    // Random variant selection
-    const randomIndex = Math.floor(Math.random() * variants.length);
-    setHeroVariant(variants[randomIndex]);
   }, [searchParams]);
 
   return (
