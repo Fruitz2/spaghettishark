@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 interface KineticTypeProps {
-  lines: [string, string];
+  lines: string[];
   className?: string;
 }
 

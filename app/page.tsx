@@ -17,7 +17,7 @@ const links = getLinks();
 
 export default function HomePage() {
   const searchParams = useSearchParams();
-  const [heroVariant, setHeroVariant] = useState<[string, string]>([
+  const [heroVariant, setHeroVariant] = useState<string[]>([
     "PASTA POWER.",
     "SHARK BITE.",
   ]);
