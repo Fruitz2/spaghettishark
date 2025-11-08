@@ -17,7 +17,7 @@ export interface Strings {
   };
   hero: {
     eyebrow: string;
-    h1Variants: [string, string][];
+    h1Variants: string[][];
     sub: string;
     buyCta: string;
     secondaryCtas: string[];
