@@ -65,19 +65,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
       <body
-        className={`${spaceGrotesk.variable} ${inter.variable} bg-wordmark font-body text-foreground antialiased`}
+        className={`${spaceGrotesk.variable} ${inter.variable} bg-black font-body antialiased`}
       >
-        <TooltipProvider delayDuration={0}>
-          <SmoothScroll>
-            <ScrollProgress />
-            <Header strings={strings} links={links} />
-            <main className="bg-wordmark">
-              {children}
-            </main>
-            <Footer strings={strings} links={links} />
-            {strings.buyEnabled && <MobileBuyDock buyEnabled={strings.buyEnabled} buyUrl={links.pump} buyLabel={strings.hero.buyCta} />}
-          </SmoothScroll>
-        </TooltipProvider>
+        {children}
       </body>
     </html>
   );
