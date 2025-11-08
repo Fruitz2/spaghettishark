@@ -202,7 +202,8 @@
   }
   
   .prose code {
-    @apply rounded bg-muted px-1.5 py-0.5 font-mono text-sm text-accent2;
+    @apply rounded bg-muted px-1.5 py-0.5 font-mono text-sm;
+    color: rgb(var(--accent2));
   }
   
   .prose a {

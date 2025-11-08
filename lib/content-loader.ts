@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import matter from "gray-matter";
+import matter from 'gray-matter';
 
 const contentDir = path.join(process.cwd(), "content", "spaghettishark");
 
@@ -80,4 +80,22 @@ export function getMarkdownContent(filename: string): {
   const fileContents = fs.readFileSync(filePath, "utf8");
   const { content, data } = matter(fileContents);
   return { content, data };
+}
+
+export async function loadMarkdownContent(filename: string): Promise<{ content: string; data: any }> {
+  // Dynamically import the markdown files at build time
+  const markdownFiles: Record<string, any> = {
+    'lore': () => import('@/content/spaghettishark/lore.md'),
+    'tokenomics': () => import('@/content/spaghettishark/tokenomics.md'),
+    'roadmap': () => import('@/content/spaghettishark/roadmap.md'),
+    'press-kit': () => import('@/content/spaghettishark/press-kit.md'),
+  };
+
+  if (markdownFiles[filename]) {
+    const fileModule = await markdownFiles[filename]();
+    const { data, content } = matter(fileModule.default || fileModule);
+    return { content, data };
+  }
+  
+  return { content: '', data: {} };
 }
