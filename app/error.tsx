@@ -20,7 +20,7 @@ export default function Error({
         Something went wrong!
       </h2>
       <p className="mb-8 text-lg text-foreground/70 md:text-xl">
-        The pasta got tangled. Let's try again.
+        The pasta got tangled. Let&apos;s try again.
       </p>
       <Button
         onClick={reset}

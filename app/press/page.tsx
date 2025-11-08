@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { TextTrail } from "@/components/TextTrail";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";

@@ -51,12 +51,11 @@ export function Header({ strings, links }: HeaderProps) {
           href="/"
           className="flex items-center gap-2 transition-opacity hover:opacity-80"
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/transparentlogo.png"
-            alt="Spaghetti Shark"
-            width={48}
-            height={48}
-            className="h-12 w-auto"
+            alt="Spaghetti Shark Logo"
+            className="h-8 w-8 md:h-10 md:w-10 object-contain"
           />
           <span className="hidden font-display text-xl font-bold tracking-tight sm:inline-block">
             SPAGHETTI SHARK

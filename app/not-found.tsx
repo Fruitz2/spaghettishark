@@ -8,7 +8,7 @@ export default function NotFound() {
         404
       </h1>
       <p className="mb-8 text-2xl font-medium text-foreground/80 md:text-3xl">
-        Lost at sea? This page doesn't exist.
+        Lost at sea? This page doesn&apos;t exist.
       </p>
       <Button asChild size="lg" className="rounded-full">
         <Link href="/">
