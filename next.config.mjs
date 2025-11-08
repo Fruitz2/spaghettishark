@@ -9,11 +9,6 @@ const nextConfig = {
   },
   webpack: (config, { isServer }) => {
     config.resolve.alias.canvas = false;
-    // Handle markdown imports
-    config.module.rules.push({
-      test: /\.md$/,
-      use: 'raw-loader',
-    });
     return config;
   },
 };
