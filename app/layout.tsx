@@ -1,14 +1,6 @@
-import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { SmoothScroll } from "@/components/SmoothScroll";
-import { MobileBuyDock } from "@/components/MobileBuyDock";
-import { ScrollProgress } from "@/components/ScrollProgress";
-import strings from "@/content/spaghettishark/strings.json";
-import links from "@/content/spaghettishark/links.json";
-import { TooltipProvider } from "@/components/ui/tooltip";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
