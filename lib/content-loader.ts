@@ -1,8 +1,5 @@
-import fs from "fs";
-import path from "path";
-import matter from 'gray-matter';
-
-const contentDir = path.join(process.cwd(), "content", "spaghettishark");
+// Note: fs imports removed to avoid client-side webpack errors
+// Content loading is handled directly in server components
 
 export interface Strings {
   buyEnabled: boolean;
@@ -61,26 +58,17 @@ export interface Links {
 }
 
 export function getStrings(): Strings {
-  const filePath = path.join(contentDir, "strings.json");
-  const fileContents = fs.readFileSync(filePath, "utf8");
-  return JSON.parse(fileContents);
+  // Import JSON directly for client-side compatibility
+  return require('@/content/spaghettishark/strings.json');
 }
 
 export function getLinks(): Links {
-  const filePath = path.join(contentDir, "links.json");
-  const fileContents = fs.readFileSync(filePath, "utf8");
-  return JSON.parse(fileContents);
+  // Import JSON directly for client-side compatibility
+  return require('@/content/spaghettishark/links.json');
 }
 
-export function getMarkdownContent(filename: string): {
-  content: string;
-  data: Record<string, unknown>;
-} {
-  const filePath = path.join(contentDir, filename);
-  const fileContents = fs.readFileSync(filePath, "utf8");
-  const { content, data } = matter(fileContents);
-  return { content, data };
-}
+// Markdown content loading moved to individual page components
+// to avoid fs import issues in client components
 
 // Note: Markdown loading is handled directly in page components
 // to avoid webpack issues with importing .md files
