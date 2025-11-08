@@ -15,6 +15,44 @@
   animation: marquee 20s linear infinite;
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  33% {
+    transform: translateY(-30px) translateX(10px);
+  }
+  66% {
+    transform: translateY(30px) translateX(-10px);
+  }
+}
+
+.animate-float {
+  animation: float ease-in-out infinite;
+}
+
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 300% 300%;
+  animation: gradient 5s ease infinite;
+}
+
+.bg-300 {
+  background-size: 300% 300%;
+}
+
+.drop-shadow-glow {
+  filter: drop-shadow(0 0 20px rgba(251, 191, 36, 0.5));
+}
+
 @layer base {
   :root {
     --background: 202 62% 11%;
