@@ -4,7 +4,11 @@ import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import { useReducedMotion } from "framer-motion";
 
-export function SmoothScroll() {
+interface SmoothScrollProps {
+  children: React.ReactNode;
+}
+
+export function SmoothScroll({ children }: SmoothScrollProps) {
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -29,5 +33,5 @@ export function SmoothScroll() {
     };
   }, [shouldReduceMotion]);
 
-  return null;
+  return <>{children}</>;
 }
