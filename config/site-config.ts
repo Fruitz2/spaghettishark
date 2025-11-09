@@ -22,7 +22,7 @@ export const siteConfig = {
   // Stats (pre-launch)
   stats: {
     marketCap: "SOON",
-    holders: "YOU",
+    holders: "SOON",
     liquidityBurned: "100%",
   },
   
@@ -34,7 +34,7 @@ export const siteConfig = {
   
   // Tokenomics
   tokenomics: {
-    totalSupply: "420.69B",
+    totalSupply: "1B",
     lpBurned: "100%",
     teamTokens: "0%",
     pastaPower: "∞",

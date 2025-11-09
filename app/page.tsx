@@ -31,19 +31,9 @@ export default function HomePage() {
       {/* Floating Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-black/80 border-b border-white/10">
         <div className="container mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center gap-3">
-              <Image 
-                src="/logo.svg" 
-                alt="Spaghetti Shark" 
-                width={120} 
-                height={40}
-                className="drop-shadow-glow"
-              />
-            </div>
-            
+          <div className="flex justify-center items-center relative">
             {/* Centered Menu */}
-            <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center gap-8">
+            <div className="flex items-center gap-8">
               <a href="#story" className="hover:text-[#F4E7D2] transition-colors font-medium text-lg">Story</a>
               <a href="#tokenomics" className="hover:text-[#E0342C] transition-colors font-medium text-lg">Tokenomics</a>
               <a href="#roadmap" className="hover:text-[#FFA500] transition-colors font-medium text-lg">Roadmap</a>
@@ -54,7 +44,7 @@ export default function HomePage() {
               href={links.pump} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="px-6 py-2 bg-gradient-to-r from-[#E0342C] to-[#FFA500] rounded-full text-white font-bold hover:scale-105 transition-transform shadow-lg"
+              className="absolute right-0 px-6 py-2 bg-gradient-to-r from-[#E0342C] to-[#FFA500] rounded-full text-white font-bold hover:scale-105 transition-transform shadow-lg"
             >
               Buy Now
             </a>
@@ -72,18 +62,18 @@ export default function HomePage() {
           }}
         />
         
-        {/* Floating Particles - SLOWER */}
-        <div className="absolute inset-0 pointer-events-none">
-          {[...Array(15)].map((_, i) => (
+        {/* Floating Particles - MUCH SLOWER & FEWER */}
+        <div className="absolute inset-0 pointer-events-none opacity-30">
+          {[...Array(5)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-1 rounded-full animate-float"
+              className="absolute w-2 h-2 rounded-full"
               style={{
                 backgroundColor: i % 3 === 0 ? '#F4E7D2' : i % 3 === 1 ? '#E0342C' : '#FFA500',
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 10}s`,
-                animationDuration: `${20 + Math.random() * 30}s`
+                animation: 'float 60s ease-in-out infinite',
+                animationDelay: `${i * 12}s`
               }}
             />
           ))}
@@ -100,8 +90,7 @@ export default function HomePage() {
               alt={siteConfig.name}
               width={600}
               height={600}
-              className="mx-auto drop-shadow-2xl animate-float"
-              style={{ animationDuration: '6s' }}
+              className="mx-auto drop-shadow-2xl"
               priority
             />
           </div>
@@ -138,13 +127,13 @@ export default function HomePage() {
             </a>
             
             <a
-              href={links.tg}
+              href="https://dexscreener.com/solana"
               target="_blank"
               rel="noopener noreferrer"
               className="px-14 py-7 border-3 rounded-full font-black text-3xl hover:bg-[#F4E7D2] hover:text-black hover:scale-110 transition-all duration-500 shadow-xl"
               style={{ borderColor: '#F4E7D2', color: '#F4E7D2', borderWidth: '3px' }}
             >
-              JOIN THE CREW 👦
+              VISIT DEXSCREENER 📊
             </a>
           </div>
 
@@ -155,8 +144,8 @@ export default function HomePage() {
               <p className="text-base text-gray-300 font-medium">Market Cap</p>
             </div>
             <div className="group text-center backdrop-blur-md bg-gradient-to-br from-white/10 to-white/5 rounded-3xl p-8 border-2 border-white/20 hover:border-[#E0342C] hover:bg-white/10 hover:scale-105 transition-all duration-500 shadow-lg hover:shadow-[#E0342C]/20">
-              <p className="text-6xl font-black mb-3 group-hover:scale-110 transition-transform duration-500" style={{ color: '#E0342C' }}>{siteConfig.stats.holders}</p>
-              <p className="text-base text-gray-300 font-medium">First Holder</p>
+              <p className="text-6xl font-black mb-3 group-hover:scale-110 transition-transform duration-500" style={{ color: '#E0342C' }}>SOON</p>
+              <p className="text-base text-gray-300 font-medium">Holders</p>
             </div>
             <div className="group text-center backdrop-blur-md bg-gradient-to-br from-white/10 to-white/5 rounded-3xl p-8 border-2 border-white/20 hover:border-[#FFA500] hover:bg-white/10 hover:scale-105 transition-all duration-500 shadow-lg hover:shadow-[#FFA500]/20">
               <p className="text-6xl font-black mb-3 group-hover:scale-110 transition-transform duration-500" style={{ color: '#FFA500' }}>{siteConfig.stats.liquidityBurned}</p>
