@@ -54,37 +54,17 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-6 pt-20">
-        {/* Animated Background Gradient - SLOWER */}
+        {/* Animated Background Gradient */}
         <div 
           className="absolute inset-0 opacity-20"
           style={{
             background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(244, 231, 210, 0.3) 0%, transparent 50%)`
           }}
         />
-        
-        {/* Floating Particles - MUCH SLOWER & FEWER */}
-        <div className="absolute inset-0 pointer-events-none opacity-30">
-          {[...Array(5)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 rounded-full"
-              style={{
-                backgroundColor: i % 3 === 0 ? '#F4E7D2' : i % 3 === 1 ? '#E0342C' : '#FFA500',
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animation: 'float 60s ease-in-out infinite',
-                animationDelay: `${i * 12}s`
-              }}
-            />
-          ))}
-        </div>
 
         <div className="relative z-10 text-center max-w-7xl mx-auto">
-          {/* Main Hero Image - TRANSPARENT LOGO */}
-          <div 
-            className="mb-8 transform transition-transform duration-1000"
-            style={{ transform: `translateY(${scrollY * 0.3}px)` }}
-          >
+          {/* Main Hero Image - TRANSPARENT LOGO (NO PARALLAX) */}
+          <div className="mb-12">
             <Image
               src="/transparentlogo.png"
               alt={siteConfig.name}
@@ -92,17 +72,6 @@ export default function HomePage() {
               height={600}
               className="mx-auto drop-shadow-2xl"
               priority
-            />
-          </div>
-
-          {/* Text Logo */}
-          <div className="mb-8">
-            <Image
-              src="/logo.svg"
-              alt="Spaghetti Shark"
-              width={400}
-              height={120}
-              className="mx-auto opacity-90"
             />
           </div>
 
@@ -114,26 +83,25 @@ export default function HomePage() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
             <a
+              href={links.tg}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-14 py-7 bg-[#0088cc] hover:bg-[#006699] rounded-full font-black text-3xl text-white hover:scale-110 transition-all duration-500 shadow-2xl border-2 border-white/20"
+            >
+              JOIN TELEGRAM 📱
+            </a>
+            
+            <a
               href={links.pump}
               target="_blank"
               rel="noopener noreferrer"
               className="group relative px-14 py-7 bg-gradient-to-br from-[#E0342C] via-[#E0342C] to-[#FFA500] rounded-full overflow-hidden font-black text-3xl text-white hover:scale-110 hover:shadow-[0_0_50px_rgba(224,52,44,0.6)] transition-all duration-500 shadow-2xl border-2 border-white/20"
             >
               <span className="relative z-10 flex items-center justify-center gap-3">
-                GET {siteConfig.ticker} NOW
+                BUY NOW
                 <span className="group-hover:translate-x-2 group-hover:scale-125 transition-transform duration-300">🚀</span>
               </span>
               <div className="absolute inset-0 bg-gradient-to-t from-white/0 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            </a>
-            
-            <a
-              href="https://dexscreener.com/solana"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-14 py-7 border-3 rounded-full font-black text-3xl hover:bg-[#F4E7D2] hover:text-black hover:scale-110 transition-all duration-500 shadow-xl"
-              style={{ borderColor: '#F4E7D2', color: '#F4E7D2', borderWidth: '3px' }}
-            >
-              VISIT DEXSCREENER 📊
             </a>
           </div>
 

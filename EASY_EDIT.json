@@ -1,0 +1,99 @@
+{
+  "INSTRUCTIONS": "Edit the text and links below, then run: npm run dev to see changes locally",
+  
+  "BRAND": {
+    "name": "SPAGHETTI SHARK",
+    "ticker": "$SHARK",
+    "tagline": "One shark. Infinite pasta. Zero survivors."
+  },
+  
+  "BUTTONS": {
+    "buyNow": {
+      "text": "GET $SHARK NOW",
+      "link": "https://pump.fun"
+    },
+    "telegram": {
+      "text": "JOIN TELEGRAM",
+      "link": "https://t.me/spaghettishark"
+    },
+    "dexscreener": {
+      "text": "VISIT DEXSCREENER",
+      "link": "https://dexscreener.com/solana"
+    }
+  },
+  
+  "STATS": {
+    "marketCap": "SOON",
+    "holders": "SOON",
+    "liquidityBurned": "100%"
+  },
+  
+  "CONTRACT": {
+    "address": "COMING SOON",
+    "network": "Solana"
+  },
+  
+  "TOKENOMICS": {
+    "totalSupply": "1B",
+    "lpBurned": "100%",
+    "teamTokens": "0%",
+    "pastaPower": "∞"
+  },
+  
+  "STORY": [
+    {
+      "emoji": "🌊",
+      "title": "The Discovery",
+      "description": "Nobody knows how it happened. One moment, a great white minding his business. The next? Ankle-deep in angel hair. Some say it was fate. Others blame the Italians. Either way, there's no going back."
+    },
+    {
+      "emoji": "🍝",
+      "title": "The Problem",
+      "description": "Turns out sharks and carbs? Dangerous combo. This apex predator now spends more time at Olive Garden than hunting seals. Marine biologists are concerned. The shark doesn't care."
+    },
+    {
+      "emoji": "🚀",
+      "title": "The Plan",
+      "description": "If you're gonna be a shark addicted to pasta, might as well go all in. The moon has no Italian restaurants yet. Time to fix that. This is not financial advice. This is pasta advice."
+    }
+  ],
+  
+  "ROADMAP": [
+    {
+      "phase": "Phase 1",
+      "title": "Launch on Pump.fun",
+      "description": "Deploy token. Get website up. Start memeing. Build the community. See what happens. No promises, just pasta."
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Grow the School",
+      "description": "Get loud on Twitter/X. Make memes. Find the other pasta sharks. Hit trending on DexScreener. Maybe get some based influencers to notice."
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Build Cool Stuff",
+      "description": "Sniper bot for catching pumps. Maybe some analytics tools. Staking if people want it. NFTs of sharks eating different pastas. Whatever makes sense."
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Get Serious (Maybe)",
+      "description": "Try for CEX listings. Cross-chain stuff if it makes sense. Let the community vote on things. Partner with actual pasta brands if they're down. Sky's the limit."
+    }
+  ],
+  
+  "COMMUNITY": {
+    "title": "JOIN THE SCHOOL",
+    "description": "Don't be a lonely shark. Swim with us. We have memes, pasta, and questionable financial decisions."
+  },
+  
+  "FOOTER": {
+    "copyright": "© 2024 Spaghetti Shark. All pasta reserved.",
+    "disclaimer": "Not financial advice. Just a shark who really likes pasta."
+  },
+  
+  "SOCIAL_LINKS": {
+    "twitter": "https://x.com/spaghettishark",
+    "telegram": "https://t.me/spaghettishark",
+    "dexscreener": "https://dexscreener.com/solana"
+  }
+}
