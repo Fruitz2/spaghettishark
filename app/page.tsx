@@ -53,14 +53,43 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 pt-20">
-        {/* Animated Background Gradient */}
-        <div 
-          className="absolute inset-0 opacity-20"
-          style={{
-            background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(244, 231, 210, 0.3) 0%, transparent 50%)`
-          }}
-        />
+      <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
+        {/* Floating Gradient Orbs Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Orb 1 - Cream */}
+          <div 
+            className="absolute w-96 h-96 rounded-full"
+            style={{
+              background: 'radial-gradient(circle, rgba(244, 231, 210, 0.25) 0%, transparent 70%)',
+              top: '10%',
+              left: '10%',
+              animation: 'float-orb-1 20s ease-in-out infinite, pulse-glow-orb 8s ease-in-out infinite',
+              filter: 'blur(40px)'
+            }}
+          />
+          {/* Orb 2 - Red */}
+          <div 
+            className="absolute w-[500px] h-[500px] rounded-full"
+            style={{
+              background: 'radial-gradient(circle, rgba(224, 52, 44, 0.2) 0%, transparent 70%)',
+              top: '40%',
+              right: '10%',
+              animation: 'float-orb-2 25s ease-in-out infinite, pulse-glow-orb 10s ease-in-out infinite',
+              filter: 'blur(50px)'
+            }}
+          />
+          {/* Orb 3 - Orange */}
+          <div 
+            className="absolute w-[450px] h-[450px] rounded-full"
+            style={{
+              background: 'radial-gradient(circle, rgba(255, 165, 0, 0.15) 0%, transparent 70%)',
+              bottom: '10%',
+              left: '30%',
+              animation: 'float-orb-3 30s ease-in-out infinite, pulse-glow-orb 12s ease-in-out infinite',
+              filter: 'blur(45px)'
+            }}
+          />
+        </div>
 
         <div className="relative z-10 text-center max-w-7xl mx-auto">
           {/* Main Hero Image - TRANSPARENT LOGO (NO PARALLAX) */}
@@ -157,53 +186,117 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Tokenomics Section */}
-      <section id="tokenomics" className="py-32 px-6 bg-gradient-to-b from-black via-[#E0342C]/10 to-black">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-6xl md:text-8xl font-black text-center mb-20 bg-gradient-to-r from-[#E0342C] to-[#FFA500] bg-clip-text text-transparent">
-            TOKENOMICS
-          </h2>
+      {/* Tokenomics Section - REDESIGNED */}
+      <section id="tokenomics" className="relative py-32 px-6 overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-[#E0342C]/5 to-black" />
+        
+        {/* Floating orbs in background */}
+        <div className="absolute inset-0 overflow-hidden opacity-20">
+          <div className="absolute w-96 h-96 rounded-full bg-gradient-to-r from-[#E0342C]/30 to-transparent blur-3xl" style={{ top: '20%', left: '10%', animation: 'float-orb-1 25s ease-in-out infinite' }} />
+          <div className="absolute w-96 h-96 rounded-full bg-gradient-to-r from-[#FFA500]/30 to-transparent blur-3xl" style={{ top: '60%', right: '10%', animation: 'float-orb-2 30s ease-in-out infinite' }} />
+        </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#F4E7D2]/20 to-[#F4E7D2]/10 blur-2xl group-hover:blur-3xl transition-all duration-700" />
-              <div className="relative bg-black/80 border-2 rounded-2xl p-10 text-center backdrop-blur-sm hover:scale-105 transition-all duration-700" style={{ borderColor: '#F4E7D2' }}>
-                <p className="text-6xl font-black mb-3" style={{ color: '#F4E7D2' }}>{siteConfig.tokenomics.totalSupply}</p>
-                <p className="text-gray-300 text-lg">Total Supply</p>
+        <div className="container mx-auto max-w-7xl relative z-10">
+          {/* Title with animated underline */}
+          <div className="text-center mb-24">
+            <h2 className="text-6xl md:text-8xl font-black mb-6 bg-gradient-to-r from-[#E0342C] via-[#FFA500] to-[#F4E7D2] bg-clip-text text-transparent animate-gradient">
+              TOKENOMICS
+            </h2>
+            <div className="w-32 h-2 mx-auto bg-gradient-to-r from-[#E0342C] to-[#FFA500] rounded-full" />
+          </div>
+
+          {/* Cards Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+            {/* Card 1 - Total Supply */}
+            <div className="group relative">
+              {/* Glow effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#F4E7D2] to-[#E0342C] rounded-3xl blur-xl opacity-25 group-hover:opacity-60 transition-all duration-700 animate-pulse" />
+              
+              <div className="relative bg-gradient-to-br from-black/90 to-black/70 border-2 border-[#F4E7D2]/30 rounded-3xl p-8 backdrop-blur-xl hover:scale-105 transition-all duration-500 overflow-hidden">
+                {/* Icon */}
+                <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-500">💰</div>
+                
+                {/* Value */}
+                <p className="text-5xl font-black mb-2 bg-gradient-to-br from-[#F4E7D2] to-[#FFA500] bg-clip-text text-transparent">
+                  {siteConfig.tokenomics.totalSupply}
+                </p>
+                
+                {/* Label */}
+                <p className="text-[#F4E7D2]/80 text-sm font-bold uppercase tracking-wider">Total Supply</p>
+                
+                {/* Decorative corner */}
+                <div className="absolute -top-8 -right-8 w-24 h-24 bg-[#F4E7D2]/10 rounded-full blur-2xl" />
               </div>
             </div>
 
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#E0342C]/20 to-[#E0342C]/10 blur-2xl group-hover:blur-3xl transition-all duration-700" />
-              <div className="relative bg-black/80 border-2 rounded-2xl p-10 text-center backdrop-blur-sm hover:scale-105 transition-all duration-700" style={{ borderColor: '#E0342C' }}>
-                <p className="text-6xl font-black mb-3" style={{ color: '#E0342C' }}>{siteConfig.tokenomics.lpBurned}</p>
-                <p className="text-gray-300 text-lg">LP Burned</p>
+            {/* Card 2 - LP Burned */}
+            <div className="group relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#E0342C] to-[#FFA500] rounded-3xl blur-xl opacity-25 group-hover:opacity-60 transition-all duration-700 animate-pulse" />
+              
+              <div className="relative bg-gradient-to-br from-black/90 to-black/70 border-2 border-[#E0342C]/30 rounded-3xl p-8 backdrop-blur-xl hover:scale-105 transition-all duration-500 overflow-hidden">
+                <div className="text-6xl mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">🔥</div>
+                <p className="text-5xl font-black mb-2 bg-gradient-to-br from-[#E0342C] to-[#FFA500] bg-clip-text text-transparent">
+                  {siteConfig.tokenomics.lpBurned}
+                </p>
+                <p className="text-[#E0342C]/80 text-sm font-bold uppercase tracking-wider">LP Burned</p>
+                <div className="absolute -top-8 -right-8 w-24 h-24 bg-[#E0342C]/10 rounded-full blur-2xl" />
               </div>
             </div>
 
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#FFA500]/20 to-[#FFA500]/10 blur-2xl group-hover:blur-3xl transition-all duration-700" />
-              <div className="relative bg-black/80 border-2 rounded-2xl p-10 text-center backdrop-blur-sm hover:scale-105 transition-all duration-700" style={{ borderColor: '#FFA500' }}>
-                <p className="text-6xl font-black mb-3" style={{ color: '#FFA500' }}>{siteConfig.tokenomics.teamTokens}</p>
-                <p className="text-gray-300 text-lg">Team Tokens</p>
+            {/* Card 3 - Team Tokens */}
+            <div className="group relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#FFA500] to-[#F4E7D2] rounded-3xl blur-xl opacity-25 group-hover:opacity-60 transition-all duration-700 animate-pulse" />
+              
+              <div className="relative bg-gradient-to-br from-black/90 to-black/70 border-2 border-[#FFA500]/30 rounded-3xl p-8 backdrop-blur-xl hover:scale-105 transition-all duration-500 overflow-hidden">
+                <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-500">🚫</div>
+                <p className="text-5xl font-black mb-2 bg-gradient-to-br from-[#FFA500] to-[#F4E7D2] bg-clip-text text-transparent">
+                  {siteConfig.tokenomics.teamTokens}
+                </p>
+                <p className="text-[#FFA500]/80 text-sm font-bold uppercase tracking-wider">Team Tokens</p>
+                <div className="absolute -top-8 -right-8 w-24 h-24 bg-[#FFA500]/10 rounded-full blur-2xl" />
               </div>
             </div>
 
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#4169E1]/20 to-[#4169E1]/10 blur-2xl group-hover:blur-3xl transition-all duration-700" />
-              <div className="relative bg-black/80 border-2 rounded-2xl p-10 text-center backdrop-blur-sm hover:scale-105 transition-all duration-700" style={{ borderColor: '#4169E1' }}>
-                <p className="text-6xl font-black mb-3" style={{ color: '#4169E1' }}>{siteConfig.tokenomics.pastaPower}</p>
-                <p className="text-gray-300 text-lg">Pasta Power</p>
+            {/* Card 4 - Pasta Power */}
+            <div className="group relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#4169E1] to-[#F4E7D2] rounded-3xl blur-xl opacity-25 group-hover:opacity-60 transition-all duration-700 animate-pulse" />
+              
+              <div className="relative bg-gradient-to-br from-black/90 to-black/70 border-2 border-[#4169E1]/30 rounded-3xl p-8 backdrop-blur-xl hover:scale-105 transition-all duration-500 overflow-hidden">
+                <div className="text-6xl mb-4 group-hover:scale-125 transition-transform duration-500">🍝</div>
+                <p className="text-5xl font-black mb-2 bg-gradient-to-br from-[#4169E1] to-[#F4E7D2] bg-clip-text text-transparent">
+                  {siteConfig.tokenomics.pastaPower}
+                </p>
+                <p className="text-[#4169E1]/80 text-sm font-bold uppercase tracking-wider">Pasta Power</p>
+                <div className="absolute -top-8 -right-8 w-24 h-24 bg-[#4169E1]/10 rounded-full blur-2xl" />
               </div>
             </div>
           </div>
 
-          {/* Contract Address */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-10 border-2 border-[#F4E7D2]/30 hover:border-[#F4E7D2]/60 transition-all duration-500">
-            <p className="text-center text-gray-400 mb-4 text-lg">CONTRACT ADDRESS</p>
-            <p className="font-mono text-2xl text-center break-all" style={{ color: '#F4E7D2' }}>
-              {siteConfig.contract.address}
-            </p>
+          {/* Contract Address - Enhanced */}
+          <div className="relative group max-w-4xl mx-auto">
+            {/* Outer glow */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#E0342C] via-[#FFA500] to-[#F4E7D2] rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-all duration-700" />
+            
+            <div className="relative bg-gradient-to-br from-black/95 to-black/80 backdrop-blur-xl rounded-3xl p-10 border-2 border-[#F4E7D2]/20 group-hover:border-[#F4E7D2]/40 transition-all duration-500">
+              {/* Icon and label */}
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <span className="text-4xl group-hover:rotate-12 transition-transform duration-500">📜</span>
+                <p className="text-[#F4E7D2]/60 font-bold uppercase tracking-widest text-lg">Contract Address</p>
+              </div>
+              
+              {/* Address */}
+              <p className="font-mono text-2xl md:text-3xl text-center break-all bg-gradient-to-r from-[#F4E7D2] via-[#FFA500] to-[#E0342C] bg-clip-text text-transparent font-bold">
+                {siteConfig.contract.address}
+              </p>
+              
+              {/* Network badge */}
+              <div className="mt-6 flex justify-center">
+                <span className="px-6 py-2 bg-gradient-to-r from-[#E0342C]/20 to-[#FFA500]/20 border border-[#FFA500]/30 rounded-full text-[#FFA500] font-bold text-sm uppercase tracking-wider">
+                  ⚡ {siteConfig.contract.network}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
