@@ -89,66 +89,78 @@ export default function HomePage() {
           ))}
         </div>
 
-        <div className="relative z-10 text-center max-w-6xl mx-auto">
-          {/* Logo with Parallax - MAIN LOGO */}
+        <div className="relative z-10 text-center max-w-7xl mx-auto">
+          {/* Main Hero Image - TRANSPARENT LOGO */}
           <div 
-            className="mb-12 transform transition-transform duration-1000"
+            className="mb-8 transform transition-transform duration-1000"
             style={{ transform: `translateY(${scrollY * 0.3}px)` }}
           >
             <Image
-              src="/logo.svg"
+              src="/transparentlogo.png"
               alt={siteConfig.name}
-              width={500}
-              height={150}
-              className="mx-auto drop-shadow-2xl"
+              width={600}
+              height={600}
+              className="mx-auto drop-shadow-2xl animate-float"
+              style={{ animationDuration: '6s' }}
               priority
             />
           </div>
 
+          {/* Text Logo */}
+          <div className="mb-8">
+            <Image
+              src="/logo.svg"
+              alt="Spaghetti Shark"
+              width={400}
+              height={120}
+              className="mx-auto opacity-90"
+            />
+          </div>
+
           {/* Tagline */}
-          <p className="text-3xl md:text-4xl mb-16 font-light max-w-3xl mx-auto" style={{ color: '#F4E7D2' }}>
+          <p className="text-4xl md:text-5xl mb-20 font-light max-w-4xl mx-auto tracking-wide" style={{ color: '#F4E7D2' }}>
             {siteConfig.tagline}
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20">
             <a
               href={links.pump}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative px-12 py-6 bg-gradient-to-r from-[#E0342C] to-[#FFA500] rounded-full overflow-hidden font-black text-2xl text-white hover:scale-105 transition-all duration-500 shadow-2xl"
+              className="group relative px-14 py-7 bg-gradient-to-br from-[#E0342C] via-[#E0342C] to-[#FFA500] rounded-full overflow-hidden font-black text-3xl text-white hover:scale-110 hover:shadow-[0_0_50px_rgba(224,52,44,0.6)] transition-all duration-500 shadow-2xl border-2 border-white/20"
             >
-              <span className="relative z-10 flex items-center justify-center gap-2">
+              <span className="relative z-10 flex items-center justify-center gap-3">
                 GET {siteConfig.ticker} NOW
-                <span className="group-hover:translate-x-2 transition-transform duration-300">🚀</span>
+                <span className="group-hover:translate-x-2 group-hover:scale-125 transition-transform duration-300">🚀</span>
               </span>
-              <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/0 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </a>
             
             <a
               href={links.tg}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-12 py-6 border-2 rounded-full font-bold text-2xl hover:bg-white/10 transition-all duration-500"
-              style={{ borderColor: '#F4E7D2', color: '#F4E7D2' }}
+              className="px-14 py-7 border-3 rounded-full font-black text-3xl hover:bg-[#F4E7D2] hover:text-black hover:scale-110 transition-all duration-500 shadow-xl"
+              style={{ borderColor: '#F4E7D2', color: '#F4E7D2', borderWidth: '3px' }}
             >
-              JOIN TELEGRAM
+              JOIN THE CREW 👦
             </a>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto">
-            <div className="text-center backdrop-blur-sm bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-[#F4E7D2]/50 transition-all duration-500">
-              <p className="text-4xl font-black mb-2" style={{ color: '#F4E7D2' }}>{siteConfig.stats.marketCap}</p>
-              <p className="text-sm text-gray-400">Market Cap</p>
+          <div className="grid grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="group text-center backdrop-blur-md bg-gradient-to-br from-white/10 to-white/5 rounded-3xl p-8 border-2 border-white/20 hover:border-[#F4E7D2] hover:bg-white/10 hover:scale-105 transition-all duration-500 shadow-lg hover:shadow-[#F4E7D2]/20">
+              <p className="text-6xl font-black mb-3 group-hover:scale-110 transition-transform duration-500" style={{ color: '#F4E7D2' }}>{siteConfig.stats.marketCap}</p>
+              <p className="text-base text-gray-300 font-medium">Market Cap</p>
             </div>
-            <div className="text-center backdrop-blur-sm bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-[#E0342C]/50 transition-all duration-500">
-              <p className="text-4xl font-black mb-2" style={{ color: '#E0342C' }}>{siteConfig.stats.holders}</p>
-              <p className="text-sm text-gray-400">Holders</p>
+            <div className="group text-center backdrop-blur-md bg-gradient-to-br from-white/10 to-white/5 rounded-3xl p-8 border-2 border-white/20 hover:border-[#E0342C] hover:bg-white/10 hover:scale-105 transition-all duration-500 shadow-lg hover:shadow-[#E0342C]/20">
+              <p className="text-6xl font-black mb-3 group-hover:scale-110 transition-transform duration-500" style={{ color: '#E0342C' }}>{siteConfig.stats.holders}</p>
+              <p className="text-base text-gray-300 font-medium">First Holder</p>
             </div>
-            <div className="text-center backdrop-blur-sm bg-white/5 rounded-2xl p-6 border border-white/10 hover:border-[#FFA500]/50 transition-all duration-500">
-              <p className="text-4xl font-black mb-2" style={{ color: '#FFA500' }}>{siteConfig.stats.liquidityBurned}</p>
-              <p className="text-sm text-gray-400">LP Burned</p>
+            <div className="group text-center backdrop-blur-md bg-gradient-to-br from-white/10 to-white/5 rounded-3xl p-8 border-2 border-white/20 hover:border-[#FFA500] hover:bg-white/10 hover:scale-105 transition-all duration-500 shadow-lg hover:shadow-[#FFA500]/20">
+              <p className="text-6xl font-black mb-3 group-hover:scale-110 transition-transform duration-500" style={{ color: '#FFA500' }}>{siteConfig.stats.liquidityBurned}</p>
+              <p className="text-base text-gray-300 font-medium">LP Burned</p>
             </div>
           </div>
         </div>
