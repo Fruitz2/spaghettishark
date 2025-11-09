@@ -1,0 +1,21 @@
+{
+  "name": "Spaghetti Shark",
+  "short_name": "$SHARK",
+  "description": "The Pasta-Powered Memecoin on Solana",
+  "icons": [
+    {
+      "src": "/transparentlogo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#E0342C",
+  "background_color": "#000000",
+  "display": "standalone",
+  "start_url": "/"
+}

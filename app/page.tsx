@@ -96,11 +96,12 @@ export default function HomePage() {
           <div className="mb-12">
             <Image
               src="/transparentlogo.png"
-              alt={siteConfig.name}
+              alt="Spaghetti Shark - A shark tangled in pasta"
               width={600}
               height={600}
               className="mx-auto drop-shadow-2xl"
               priority
+              quality={90}
             />
           </div>
 
