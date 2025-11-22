@@ -100,11 +100,20 @@ export function Header({ strings, links }: HeaderProps) {
             </Button>
           )}
           <a
-            href={links.twitter}
+            href={links.x}
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 hover:bg-foreground/5 rounded-lg transition-colors"
-            aria-label="Follow on Twitter"
+            aria-label="Follow on X"
+          >
+            <Twitter size={20} className="text-accent" />
+          </a>
+          <a
+            href={links.x}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 hover:bg-foreground/5 rounded-lg transition-colors"
+            aria-label="Follow on X"
           >
             <Twitter size={20} className="text-accent" />
           </a>
