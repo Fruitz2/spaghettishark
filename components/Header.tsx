@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Twitter } from "lucide-react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 import type { Strings, Links } from "@/lib/content-loader";
@@ -99,6 +99,15 @@ export function Header({ strings, links }: HeaderProps) {
               </a>
             </Button>
           )}
+          <a
+            href={links.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 hover:bg-foreground/5 rounded-lg transition-colors"
+            aria-label="Follow on Twitter"
+          >
+            <Twitter size={20} className="text-accent" />
+          </a>
           <Button
             asChild
             variant="ghost"
