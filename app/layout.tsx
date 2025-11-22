@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@spaghettishark",
-    creator: "@spaghettishark",
+    site: "@SpaghettisharkX",
+    creator: "@SpaghettisharkX",
     title: "Spaghetti Shark ($SHARK) - The Pasta-Powered Memecoin",
     description: "One shark. Infinite pasta. Zero survivors. 🦈🍝 100% LP burned on Solana.",
     images: ["https://spaghettishark.xyz/transparentlogo.png"],
